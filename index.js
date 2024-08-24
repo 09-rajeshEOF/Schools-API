@@ -24,6 +24,11 @@ app.listen(PORT, () => {
 });
 
 //endpoints
+
+app.get('/', (req, res) => {
+    res.send('Welcome to the School API!');
+  });
+  
 app.post("/addSchool", (req, res) => {
   const { name, address, latitude, longitude } = req.body;
   require("./controllers/addSchool.controller").addSchool(
